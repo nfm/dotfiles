@@ -1,0 +1,6 @@
+#!/bin/bash
+
+LINE_NUMBER=$1
+FILE=$2
+
+head -$LINE_NUMBER $FILE | tail -1
