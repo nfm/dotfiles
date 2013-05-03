@@ -1,0 +1,40 @@
+[user]
+	name = Nicholas Firth-McCoy
+	email = nicholas@2suggestions.com.au
+[color]
+	ui = true
+[push]
+	default = current
+[branch]
+	autosetupmerge = true
+[alias]
+  s = status
+	b = branch
+	ri = rebase --interactive
+	sp = stash pop
+
+	a = add
+	ai = add --interactive
+	au = add --update
+  # Add only new files
+  an = !git add $(git ls-files -o --exclude-standard)
+
+	c = commit
+	cm = commit -m
+	ca = commit --amend
+	cane = commit --amend --no-edit
+
+	co = checkout
+
+	d = diff
+	dc = diff --cached
+
+  # List all tags, using version ordering rather than alphabetic ordering
+	t = !git tag | sort -V
+
+  # Use hub to compare master with develop before deploying
+  cc = compare master...develop
+
+  l = log
+  ll = log --decorate --oneline
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
