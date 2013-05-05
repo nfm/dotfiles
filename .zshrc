@@ -14,6 +14,10 @@ export TERM="screen-256color-bce"
 export PATH="$HOME/.local/bin:$HOME/.bin:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# Initialize nvm
+source ~/.nvm/nvm.sh
+nvm use 0.10.5 >> /dev/null
+
 # Ruby performance improvements
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
