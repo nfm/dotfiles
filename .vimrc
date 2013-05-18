@@ -150,3 +150,18 @@ function! InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
+
+" View a gem's info on rubygems.org
+function! Gem()
+  let gem_name = a:0
+
+  if gem_name == ""
+    let gem_name = expand("<cword>")
+  end
+
+  let url = "https://rubygems.org/gems/" . gem_name
+  let cmd = "xdg-open " . url
+
+  call system(cmd)
+endfunction
+command! Gem call Gem()
