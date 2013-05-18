@@ -80,8 +80,8 @@ set ignorecase smartcase
 set incsearch
 set hlsearch
 " Clear the search buffer when hitting return
-nnoremap <cr> :nohlsearch<cr>
-nnoremap :w<cr> :w<cr>:nohlsearch<cr>
+nnoremap <cr> :nohlsearch<cr><cr>
+nnoremap :w<cr> :w<cr>:nohlsearch<cr><cr>
 
 " Show matching brace when a closing brace is inserted
 set showmatch
