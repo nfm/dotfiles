@@ -97,9 +97,6 @@ autocmd FileType ruby,eruby,haml,coffee,json :set shiftwidth=2 tabstop=2 expandt
 " Set leader key
 let mapleader=","
 
-" Map w!! to reopen and write the file as sudo
-cmap w!! %!sudo tee > /dev/null %
-
 " Map normal mode keyboard shortcuts for tabs
 nmap <C-H> :tabp<CR>
 nmap <C-L> :tabn<CR>
