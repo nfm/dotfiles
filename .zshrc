@@ -11,7 +11,7 @@ eval `dircolors ~/.zsh/dircolors/solarized.ansi-dark`
 export TERM="screen-256color-bce"
 
 # PATH
-export PATH="$HOME/.local/bin:$HOME/.bin:$HOME/.rbenv/bin:$PATH"
+export PATH="/usr/local/heroku/bin:$HOME/.local/bin:$HOME/.bin:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # Initialize nvm
