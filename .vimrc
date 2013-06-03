@@ -43,9 +43,9 @@ set ruler
 set timeout timeoutlen=1000 ttimeoutlen=100
 
 " Set up colors
-"set t_Co=16
+" Make colors work with TERM=xterm
 set t_Co=256
-let g:solarized_termcolors=16
+" Use solarized
 set background=dark
 colorscheme solarized
 

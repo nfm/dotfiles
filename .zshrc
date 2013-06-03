@@ -8,7 +8,6 @@ export EDITOR=/usr/bin/vim
 
 # Solarized
 eval `dircolors ~/.zsh/dircolors/solarized.ansi-dark`
-export TERM="screen-256color-bce"
 
 # PATH
 export PATH="/usr/local/heroku/bin:$HOME/.local/bin:$HOME/.bin:$HOME/.rbenv/bin:$PATH"
