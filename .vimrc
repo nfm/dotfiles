@@ -133,6 +133,15 @@ let g:syntastic_auto_loc_list=1
 " Configure YankRing
 let g:yankring_history_dir = '$HOME/.vim'
 
+" Configure rails.vim
+let g:rails_projections = {
+			\ "app/services/*.rb": {
+			\   "command": "service",
+			\   "test": [
+			\     "spec/services/%s_spec.rb"
+			\   ],
+			\ }}
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
