@@ -82,6 +82,3 @@ bindkey -M viins '^F' history-incremental-pattern-search-forward
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
-
-# Set up bookmarks
-cdpath=(~/repos/paydirt)
