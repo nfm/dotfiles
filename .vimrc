@@ -135,12 +135,37 @@ let g:yankring_history_dir = '$HOME/.vim'
 
 " Configure rails.vim
 let g:rails_projections = {
-			\ "app/services/*.rb": {
-			\   "command": "service",
-			\   "test": [
-			\     "spec/services/%s_spec.rb"
-			\   ],
-			\ }}
+\  "app/services/*.rb": {
+\    "command": "service",
+\    "test": [
+\      "spec/services/%s_spec.rb"
+\    ],
+\  },
+\  "app/assets/javascripts/templates/*.hamlc": {
+\    "command": "template",
+\    "alternate": [
+\      "app/assets/javascripts/views/%s.coffee"
+\    ],
+\  },
+\  "app/assets/javascripts/collections/*.coffee": {
+\    "command": "collection",
+\    "alternate": [
+\      "app/assets/javascripts/models/%i.coffee"
+\    ],
+\  },
+\  "app/assets/javascripts/models/*.coffee": {
+\    "command": "mmodel",
+\    "alternate": [
+\      "app/assets/javascripts/collections/%p.coffee"
+\    ],
+\  },
+\  "app/assets/javascripts/views/*.coffee": {
+\    "command": "vview",
+\    "alternate": [
+\      "app/assets/javascripts/templates/%s.hamlc"
+\    ],
+\  }
+\}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
