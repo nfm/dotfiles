@@ -100,7 +100,6 @@ let mapleader=","
 " Map normal mode keyboard shortcuts for tabs
 nmap <C-H> :tabp<CR>
 nmap <C-L> :tabn<CR>
-nmap <C-t> :tabnew<CR>
 
 " Unmap <F1> showing :help
 nmap <F1> <nop>
