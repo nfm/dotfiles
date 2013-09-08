@@ -21,7 +21,6 @@ Bundle 'grep.vim'
 Bundle 'AutoTag'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
-Bundle 'mattn/zencoding-vim'
 Bundle 'jpalardy/vim-slime'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
@@ -31,6 +30,7 @@ Bundle 'vim-scripts/YankRing.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
+Bundle 'mattn/emmet-vim'
 
 set nocompatible
 set history=10000
