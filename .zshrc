@@ -27,12 +27,8 @@ export RUBY_FREE_MIN=600000
 export LD_PRELOAD=/usr/lib/libtcmalloc_minimal.so.4
 
 # Set up the prompt
-
 autoload -U colors && colors
-autoload -Uz promptinit
-PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
-promptinit
-prompt redhat
+source ~/.zsh/prompt.zsh
 
 setopt histignorealldups sharehistory
 
