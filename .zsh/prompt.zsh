@@ -28,4 +28,6 @@ need_push () {
   fi
 }
 
-PROMPT="%{$fg[blue]%}%m:%{$reset_color%} %{$fg[yellow]%}%~ %{$reset_color%}%{$fg[cyan]%}% %{$reset_color%}$(git_prompt_info)$ "
+precmd () {
+  PROMPT="%{$fg[blue]%}%m:%{$reset_color%} %{$fg[yellow]%}%~ %{$reset_color%}%{$fg[cyan]%}% %{$reset_color%}$(git_prompt_info)$ "
+}
