@@ -140,6 +140,12 @@ let g:rails_projections = {
 \      "spec/services/%s_spec.rb"
 \    ],
 \  },
+\  "app/serializers/*.rb": {
+\    "command": "serializer",
+\    "test": [
+\      "spec/serializers/%s_spec.rb"
+\    ],
+\  },
 \  "app/assets/javascripts/templates/*.hamlc": {
 \    "command": "template",
 \    "alternate": [
