@@ -1,6 +1,6 @@
 source /etc/zsh/zshrc
 source ~/.zsh/aliases
-source ~/.zsh/functions
+source ~/.zsh/functions.zsh
 
 umask 077
 
