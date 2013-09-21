@@ -21,3 +21,32 @@ function cp_p()
          }
          END { print "" }' total_size=$(stat -c '%s' "${1}") count=0
 }
+
+function up()
+{
+  local DIR=$PWD
+  local TARGET=$1
+  while [ ! -e $DIR/$TARGET -a $DIR != "/" ]; do
+    DIR=$(dirname $DIR)
+  done
+  test $DIR != "/" && echo $DIR/$TARGET
+}
+
+function cdup()
+{
+  if [ "$1" != "" ]; then
+    TARGET=$*
+  else
+    TARGET=.git
+  fi
+
+  DIR=`up $TARGET`
+
+  if [ "$DIR" != "" ]; then
+    if [ `basename "$DIR"` = ".git" ]; then
+      cd `dirname $DIR`
+    else
+      cd $DIR
+    fi
+  fi
+}
