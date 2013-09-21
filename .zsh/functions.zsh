@@ -50,3 +50,8 @@ function cdup()
     fi
   fi
 }
+
+function diff()
+{
+  colordiff -u "$@" | less -R
+}
