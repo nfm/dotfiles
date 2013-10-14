@@ -119,6 +119,9 @@ noremap <Right> <nop>
 " Shortcut to toggle Tagbar plugin
 nmap <F8> :TagbarToggle<CR> 
 
+" Make Y behave like other capitals
+map Y y$
+
 " Toggle paste mode
 set pastetoggle=<Leader>p
 
