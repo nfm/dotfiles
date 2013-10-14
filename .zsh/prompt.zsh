@@ -21,10 +21,14 @@ git_prompt_info () {
 }
 
 need_push () {
-  UNPUSHED=$(git cherry -v origin/$(git_branch) 2>/dev/null | wc -l)
+  BRANCH=$(git_branch)
+  UNPUSHED=$(git log --oneline $BRANCH ^origin/$BRANCH 2>/dev/null | head -n 101 | wc -l)
   if [[ ${UNPUSHED} -gt 0 ]]
   then
-    if [[ ${UNPUSHED} -gt 3 ]]
+    if [[ ${UNPUSHED} -gt 100 ]]
+    then
+      echo " ${UNPUSHED}+›"
+    elif [[ ${UNPUSHED} -gt 3 ]]
     then
       echo " ${UNPUSHED}›"
     else
