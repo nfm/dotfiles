@@ -1,4 +1,3 @@
-source /etc/zsh/zshrc
 source ~/.zsh/aliases
 source ~/.zsh/functions.zsh
 
