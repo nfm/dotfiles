@@ -10,7 +10,7 @@ eval `dircolors ~/.zsh/dircolors/solarized.ansi-dark`
 
 # PATH
 export PATH="/usr/local/heroku/bin:$HOME/.local/bin:$HOME/.bin:$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+eval "$(rbenv init - --no-rehash zsh)"
 
 # Initialize nvm
 source ~/.nvm/nvm.sh
