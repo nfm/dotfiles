@@ -63,9 +63,6 @@ set number
 " Use lighter line number color
 highlight LineNr ctermfg=Grey
 
-" Highlight current line
-set cursorline
-
 " Always show the tab line and status line
 set showtabline=2
 set laststatus=2
