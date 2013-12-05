@@ -123,6 +123,10 @@ map Y y$
 " Toggle paste mode
 set pastetoggle=<Leader>p
 
+" Configure wildcard expansion
+set wildmenu
+set wildignore+=*/tmp
+
 " Search for word under cursor using ag
 nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
