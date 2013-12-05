@@ -132,6 +132,7 @@ nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Configure vim-slime
 let g:slime_target = "tmux"
+let g:slime_paste_file = tempname()
 
 " Configure syntastic
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'coffee'], 'passive_filetypes': ['sass'] }
