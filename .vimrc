@@ -18,7 +18,7 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'lunaru/vim-less'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'grep.vim'
+Bundle 'rking/ag.vim'
 Bundle 'AutoTag'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
@@ -122,6 +122,9 @@ map Y y$
 
 " Toggle paste mode
 set pastetoggle=<Leader>p
+
+" Search for word under cursor using ag
+nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Configure vim-slime
 let g:slime_target = "tmux"
