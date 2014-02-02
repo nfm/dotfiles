@@ -67,11 +67,18 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # Load up zmv
 autoload zmv
 
+# Use vi mode
+bindkey -v
+
 # Bind keys for history searching
 bindkey -M viins '^R' history-incremental-pattern-search-backward
 bindkey -M viins '^F' history-incremental-pattern-search-forward
+bindkey -M viins '^P' up-history
+bindkey -M viins '^N' down-history
 
 # Use C-x C-e to edit the current command line
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
+
+bindkey -M viins 'jj' vi-cmd-mode
