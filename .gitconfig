@@ -40,5 +40,6 @@
 	f = "!git ls-files | grep -i"
 
   l = log
+	ls = log --format='%C(yellow)%h%Creset%C(red)%d%Creset %s %C(blue)%aN%Creset %Cgreen(%ar)'
   ll = log --decorate --oneline
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
