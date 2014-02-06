@@ -36,6 +36,9 @@
   # Use hub to compare master with develop before deploying
   cc = compare master...develop
 
+	# Find files by file name
+	f = "!git ls-files | grep -i"
+
   l = log
   ll = log --decorate --oneline
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
