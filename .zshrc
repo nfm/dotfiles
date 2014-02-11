@@ -13,8 +13,11 @@ export PATH="/usr/local/heroku/bin:$HOME/.local/bin:$HOME/.bin:$HOME/.rbenv/bin:
 eval "$(rbenv init - --no-rehash zsh)"
 
 # Initialize nvm
-source ~/.nvm/nvm.sh
-nvm use 0.10.5 >> /dev/null
+if [[ -e ~/.nvm/nvm.sh ]]
+then
+  source ~/.nvm/nvm.sh
+  nvm use 0.10.5 >> /dev/null
+fi
 
 # Ruby performance improvements
 export RUBY_GC_HEAP_INIT_SLOTS=1000000
