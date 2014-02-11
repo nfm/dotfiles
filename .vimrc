@@ -87,7 +87,7 @@ set nowb
 set noswapfile
 
 filetype plugin indent on
-autocmd FileType ruby,eruby,haml,coffee,json,zsh :set shiftwidth=2 tabstop=2 expandtab
+set shiftwidth=2 tabstop=2 expandtab
 
 " Set leader key
 let mapleader=","
