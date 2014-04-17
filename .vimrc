@@ -32,6 +32,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/emmet-vim'
+Bundle 'rcmdnk/vim-markdown'
 
 set nocompatible
 set history=10000
@@ -186,6 +187,9 @@ let g:rails_projections = {
 \    ],
 \  }
 \}
+
+" Configure vim-markdown
+let g:vim_markdown_folding_disabled=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
