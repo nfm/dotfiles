@@ -16,7 +16,7 @@ eval "$(rbenv init - --no-rehash zsh)"
 if [[ -e ~/.nvm/nvm.sh ]]
 then
   source ~/.nvm/nvm.sh
-  nvm use 0.10.5 >> /dev/null
+  nvm use 0.11 >> /dev/null
 fi
 
 # Ruby performance improvements
