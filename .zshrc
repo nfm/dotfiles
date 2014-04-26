@@ -9,8 +9,10 @@ export EDITOR=/usr/bin/vim
 eval `dircolors ~/.zsh/dircolors/solarized.ansi-dark`
 
 # PATH
-export PATH="/usr/local/heroku/bin:$HOME/.local/bin:$HOME/.bin:$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - --no-rehash zsh)"
+export PATH="/usr/local/heroku/bin:$HOME/.local/bin:$HOME/.bin:$PATH"
+
+# Initialize chruby
+source $HOME/.local/share/chruby/chruby.sh
 
 # Initialize nvm
 if [[ -e ~/.nvm/nvm.sh ]]
