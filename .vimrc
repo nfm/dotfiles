@@ -192,7 +192,8 @@ let g:rails_projections = {
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>ga :Gwrite<CR>
 nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gdc :Git diff --cached<CR>
+nnoremap <Leader>gd :Git! diff<CR>
+nnoremap <Leader>gdc :Git! diff --cached<CR>
 
 " Configure vim-markdown
 let g:vim_markdown_folding_disabled=1
