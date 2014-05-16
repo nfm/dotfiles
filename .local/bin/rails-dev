@@ -1,0 +1,31 @@
+#!/bin/zsh
+
+alias tmux="TERM=screen-256color-bce tmux"
+
+export DIRECTORY_NAME="${HOME}"/"${1}"
+
+if [[ ! -d ${DIRECTORY_NAME} ]]
+then
+	echo "The directory ${DIRECTORY_NAME} does not exist"
+	exit 1
+fi
+
+SESSION_NAME="$1"
+cd $DIRECTORY_NAME
+
+tmux start-server
+tmux new-session -d -s $SESSION_NAME -n dev
+
+tmux split-window -h -d -p30 -t $SESSION_NAME:1
+
+tmux new-window -t $SESSION_NAME:2 -n tests
+tmux send-keys -t $SESSION_NAME:2 'be guard' C-m
+
+tmux new-window -t $SESSION_NAME:3 -n console
+tmux send-keys -t $SESSION_NAME:3 's rails console' C-m
+
+tmux new-window -t $SESSION_NAME:4 -n server
+tmux send-keys -t $SESSION_NAME:4 'be foreman start' C-m
+
+tmux select-window -t $SESSION_NAME:1
+tmux attach-session -d -t$SESSION_NAME
