@@ -13,7 +13,7 @@ export PATH="/usr/local/heroku/bin:$HOME/.local/bin:$HOME/.bin:$PATH"
 
 # Initialize chruby
 source $HOME/.local/share/chruby/chruby.sh
-chruby ruby-2.1.2
+chruby ruby-2.1.3
 
 # Initialize nvm
 if [[ -e ~/.nvm/nvm.sh ]]
