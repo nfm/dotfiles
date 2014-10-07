@@ -135,7 +135,8 @@ set wildmenu
 set wildignore+=*/tmp
 
 " Search for word under cursor using ag
-nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap K :Ag!<CR>
+"\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Configure vim-slime
 let g:slime_target = "tmux"
