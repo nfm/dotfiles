@@ -10,7 +10,7 @@ then
 	exit 1
 fi
 
-if [[ ! -d ${DIRECTORY_NAME}/Gemfile ]]
+if [[ ! -f ${DIRECTORY_NAME}/Gemfile ]]
 then
 	echo "The directory ${DIRECTORY_NAME} doesn't look like a Rails app"
 	exit 1
