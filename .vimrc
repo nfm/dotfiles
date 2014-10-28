@@ -135,6 +135,9 @@ set pastetoggle=<Leader>p
 " Close tabs quicker
 nnoremap <Leader>q :close<CR>
 
+" Bundle install
+nnoremap <Leader>b :!bundle<CR>
+
 " Configure wildcard expansion
 set wildmenu
 set wildignore+=*/tmp
