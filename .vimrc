@@ -34,6 +34,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'rcmdnk/vim-markdown'
 Bundle 'valloric/YouCompleteMe'
+Bundle 'mtscout6/vim-cjsx'
 
 set nocompatible
 set history=10000
