@@ -186,6 +186,9 @@ let g:rails_projections = {
 \    "alternate": [
 \      "app/assets/javascripts/templates/%s.hamlc"
 \    ],
+\  },
+\  "app/assets/javascripts/components/*.coffee": {
+\    "command": "component"
 \  }
 \}
 
