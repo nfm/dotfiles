@@ -130,6 +130,9 @@ nnoremap <Leader>n :nohlsearch<CR>
 " Toggle paste mode
 set pastetoggle=<Leader>p
 
+" Close tabs quicker
+nnoremap <Leader>q :close<CR>
+
 " Configure wildcard expansion
 set wildmenu
 set wildignore+=*/tmp
