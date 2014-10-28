@@ -33,6 +33,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'rcmdnk/vim-markdown'
+Bundle 'valloric/YouCompleteMe'
 
 set nocompatible
 set history=10000
