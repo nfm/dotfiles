@@ -11,6 +11,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-bundler'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'matchit.zip'
 Bundle 'mru.vim'
@@ -134,9 +135,6 @@ set pastetoggle=<Leader>p
 
 " Close tabs quicker
 nnoremap <Leader>q :close<CR>
-
-" Bundle install
-nnoremap <Leader>b :!bundle<CR>
 
 " Configure wildcard expansion
 set wildmenu
