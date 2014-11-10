@@ -208,6 +208,9 @@ nnoremap <Leader>gdc :Git! diff --cached<CR>
 " Configure vim-markdown
 let g:vim_markdown_folding_disabled=1
 
+" Configure ycm
+let g:ycm_collect_identifiers_from_tags_files = 1
+
 " View a gem's info on rubygems.org
 function! Gem()
   let gem_name = a:0
