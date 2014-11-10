@@ -211,6 +211,9 @@ let g:vim_markdown_folding_disabled=1
 " Configure ycm
 let g:ycm_collect_identifiers_from_tags_files = 1
 
+" Look for tags in gems.tags file too
+set tags+=gems.tags
+
 " View a gem's info on rubygems.org
 function! Gem()
   let gem_name = a:0
