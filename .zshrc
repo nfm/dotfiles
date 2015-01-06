@@ -29,7 +29,7 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1.25
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=600000
 export RUBY_GC_HEAP_FREE_SLOTS=600000
-export LD_PRELOAD=/usr/lib/libtcmalloc_minimal.so.4
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.1
 
 # Set up the prompt
 autoload -U colors && colors
