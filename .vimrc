@@ -165,40 +165,40 @@ let g:rails_projections = {
 \  "app/services/*.rb": {
 \    "command": "service",
 \    "test": [
-\      "spec/services/%s_spec.rb"
+\      "spec/services/{}_spec.rb"
 \    ],
 \  },
 \  "app/serializers/*.rb": {
 \    "command": "serializer",
 \    "test": [
-\      "spec/serializers/%s_spec.rb"
+\      "spec/serializers/{}_spec.rb"
 \    ],
 \  },
 \  "app/assets/javascripts/templates/*.hamlc": {
 \    "command": "template",
 \    "alternate": [
-\      "app/assets/javascripts/views/%s.coffee"
+\      "app/assets/javascripts/views/{}.coffee"
 \    ],
 \  },
 \  "app/assets/javascripts/collections/*.coffee": {
 \    "command": "collection",
 \    "alternate": [
-\      "app/assets/javascripts/models/%i.coffee"
+\      "app/assets/javascripts/models/{singular}.coffee"
 \    ],
 \  },
 \  "app/assets/javascripts/models/*.coffee": {
 \    "command": "mmodel",
 \    "alternate": [
-\      "app/assets/javascripts/collections/%p.coffee"
+\      "app/assets/javascripts/collections/{plural}.coffee"
 \    ],
 \  },
 \  "app/assets/javascripts/views/*.coffee": {
 \    "command": "vview",
 \    "alternate": [
-\      "app/assets/javascripts/templates/%s.hamlc"
+\      "app/assets/javascripts/templates/{}.hamlc"
 \    ],
 \  },
-\  "app/assets/javascripts/components/*.coffee": {
+\  "app/assets/javascripts/components/*.coffee.cjsx": {
 \    "command": "component"
 \  }
 \}
