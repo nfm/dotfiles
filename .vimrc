@@ -136,6 +136,11 @@ set pastetoggle=<Leader>p
 " Close tabs quicker
 nnoremap <Leader>q :close<CR>
 
+" Shortcuts for tags
+nnoremap <Leader>tt :tag
+nnoremap <Leader>tn :tnext<CR>
+nnoremap <Leader>tp :tprevious<CR>
+
 " Configure wildcard expansion
 set wildmenu
 set wildignore+=*/tmp
