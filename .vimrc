@@ -1,43 +1,43 @@
 " Vundle required config
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Bundles
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-bundler'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'matchit.zip'
-Bundle 'mru.vim'
-Bundle 'kana/vim-textobj-user'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'lunaru/vim-less'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'rking/ag.vim'
-Bundle 'AutoTag'
-Bundle 'majutsushi/tagbar'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jpalardy/vim-slime'
-Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'vim-scripts/YankRing.vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mattn/gist-vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'rcmdnk/vim-markdown'
-Bundle 'valloric/YouCompleteMe'
-Bundle 'mtscout6/vim-cjsx'
-
 set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" Plugins
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-bundler'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'matchit.zip'
+Plugin 'mru.vim'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'lunaru/vim-less'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'rking/ag.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jpalardy/vim-slime'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-scripts/YankRing.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/gist-vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'rcmdnk/vim-markdown'
+Plugin 'valloric/YouCompleteMe'
+Plugin 'mtscout6/vim-cjsx'
+call vundle#end()
+
 set history=10000
 syntax on
 " Show unfinished commands in the status line
@@ -136,6 +136,11 @@ set pastetoggle=<Leader>p
 " Close tabs quicker
 nnoremap <Leader>q :close<CR>
 
+" Shortcuts for tags
+nnoremap <Leader>tt :tag
+nnoremap <Leader>tn :tnext<CR>
+nnoremap <Leader>tp :tprevious<CR>
+
 " Configure wildcard expansion
 set wildmenu
 set wildignore+=*/tmp
@@ -160,40 +165,40 @@ let g:rails_projections = {
 \  "app/services/*.rb": {
 \    "command": "service",
 \    "test": [
-\      "spec/services/%s_spec.rb"
+\      "spec/services/{}_spec.rb"
 \    ],
 \  },
 \  "app/serializers/*.rb": {
 \    "command": "serializer",
 \    "test": [
-\      "spec/serializers/%s_spec.rb"
+\      "spec/serializers/{}_spec.rb"
 \    ],
 \  },
 \  "app/assets/javascripts/templates/*.hamlc": {
 \    "command": "template",
 \    "alternate": [
-\      "app/assets/javascripts/views/%s.coffee"
+\      "app/assets/javascripts/views/{}.coffee"
 \    ],
 \  },
 \  "app/assets/javascripts/collections/*.coffee": {
 \    "command": "collection",
 \    "alternate": [
-\      "app/assets/javascripts/models/%i.coffee"
+\      "app/assets/javascripts/models/{singular}.coffee"
 \    ],
 \  },
 \  "app/assets/javascripts/models/*.coffee": {
 \    "command": "mmodel",
 \    "alternate": [
-\      "app/assets/javascripts/collections/%p.coffee"
+\      "app/assets/javascripts/collections/{plural}.coffee"
 \    ],
 \  },
 \  "app/assets/javascripts/views/*.coffee": {
 \    "command": "vview",
 \    "alternate": [
-\      "app/assets/javascripts/templates/%s.hamlc"
+\      "app/assets/javascripts/templates/{}.hamlc"
 \    ],
 \  },
-\  "app/assets/javascripts/components/*.coffee": {
+\  "app/assets/javascripts/components/*.coffee.cjsx": {
 \    "command": "component"
 \  }
 \}
