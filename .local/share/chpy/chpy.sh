@@ -23,7 +23,6 @@ function chpy {
         CURRENT_CHPY_VERSION="${NEW_CHPY_VERSION}"
         echo "${CURRENT_CHPY_VERSION}" > "$CURRENT_CHPY_FILE"
         export PATH=$(_chpy_bin_path):${PATH}
-        _current_python
         return 0
     else
         echo "Unavailable Python"
