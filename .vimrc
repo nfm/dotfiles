@@ -33,7 +33,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'rcmdnk/vim-markdown'
 Plugin 'valloric/YouCompleteMe'
 Plugin 'mtscout6/vim-cjsx'
 call vundle#end()
@@ -209,9 +208,6 @@ nnoremap <Leader>ga :Gwrite<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gd :Git! diff<CR>
 nnoremap <Leader>gdc :Git! diff --cached<CR>
-
-" Configure vim-markdown
-let g:vim_markdown_folding_disabled=1
 
 " Configure ycm
 let g:ycm_collect_identifiers_from_tags_files = 1
