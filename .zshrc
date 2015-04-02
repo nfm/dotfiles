@@ -23,7 +23,7 @@ chpy 2.7.9
 if [[ -e ~/.nvm/nvm.sh ]]
 then
   source ~/.nvm/nvm.sh
-  nvm use 0.11 >> /dev/null
+  nvm use 0.12 >> /dev/null
 fi
 
 # Ruby performance improvements
