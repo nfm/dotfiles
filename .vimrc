@@ -103,12 +103,6 @@ inoremap jj <Esc>
 " Don't un-indent leading hashes
 inoremap # X#
 
-" Disable arrow keys
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
-
 " Make Y behave like other capitals
 map Y y$
 
