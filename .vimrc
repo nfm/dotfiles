@@ -1,5 +1,4 @@
 " Vundle required config
-set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -41,10 +40,8 @@ set ruler
 " Fix slow O inserts after hitting ESC
 set timeout timeoutlen=1000 ttimeoutlen=100
 
-" Set up colors
-" Make colors work with TERM=xterm
+" Set up colors, use solarized
 set t_Co=256
-" Use solarized
 set background=dark
 colorscheme solarized
 
@@ -112,7 +109,7 @@ nnoremap ; :
 " Make saving easier
 nnoremap <Leader>w :w<CR>
 
-" Clear the search buffer when hitting return
+" Turn off search highlighting
 nnoremap <Leader>n :nohlsearch<CR>
 
 " Toggle paste mode
@@ -133,7 +130,6 @@ set wildignore+=*/tmp
 
 " Search for word under cursor using ag
 nnoremap K :Ag!<CR>
-"\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Configure vim-slime
 let g:slime_target = "tmux"
@@ -142,9 +138,6 @@ let g:slime_paste_file = tempname()
 " Configure syntastic
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'coffee'], 'passive_filetypes': ['sass'] }
 let g:syntastic_auto_loc_list=1
-
-" Configure YankRing
-let g:yankring_history_dir = '$HOME/.vim'
 
 " Configure rails.vim
 let g:rails_projections = {
