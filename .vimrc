@@ -109,9 +109,6 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
-" Shortcut to toggle Tagbar plugin
-nmap <F8> :TagbarToggle<CR> 
-
 " Make Y behave like other capitals
 map Y y$
 
@@ -134,6 +131,7 @@ nnoremap <Leader>q :close<CR>
 nnoremap <Leader>tt :tag
 nnoremap <Leader>tn :tnext<CR>
 nnoremap <Leader>tp :tprevious<CR>
+nnoremap <Leader>tb :TagbarToggle<CR>
 
 " Configure wildcard expansion
 set wildmenu
