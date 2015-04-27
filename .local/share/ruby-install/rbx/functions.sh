@@ -6,16 +6,8 @@ ruby_mirror="${ruby_mirror:-http://releases.rubini.us}"
 ruby_url="${ruby_url:-$ruby_mirror/$ruby_archive}"
 
 #
-# Install optional dependencies for Rubinius.
+# Install gems needed by Rubinius.
 #
-function install_optional_deps()
-{
-	if ! command -v bundle >/dev/null; then
-		log "Installing bundler ..."
-		GEM_HOME=$src_dir/ gem install bundler || return $?
-	fi
-}
-
 function install_gems()
 {
 	export PATH="$PWD/vendor/gems/bin:$PATH"

@@ -1,3 +1,5 @@
+source "$ruby_install_dir/checksums.sh"
+
 if (( $UID == 0 )); then
 	src_dir="${src_dir:-/usr/local/src}"
 	rubies_dir="${rubies_dir:-/opt/rubies}"
@@ -47,16 +49,34 @@ function download_ruby()
 }
 
 #
-# Verifies the Ruby archive matches a checksum.
+# Looks up a checksum for $ruby_archive.
+#
+function ruby_checksum()
+{
+	local algorithm="$1"
+	local checksums="$ruby_dir/checksums.$algorithm"
+
+	lookup_checksum "$checksums" "$ruby_archive"
+}
+
+#
+# Verifies the Ruby archive against all known checksums.
 #
 function verify_ruby()
 {
-	if [[ -n "$ruby_md5" ]]; then
-		log "Verifying $ruby_archive ..."
-		verify "$src_dir/$ruby_archive" "$ruby_md5" || return $?
-	else
-		warn "No checksum for $ruby_archive. Proceeding anyways"
-	fi
+	local file="$src_dir/$ruby_archive"
+
+	log "Verifying $ruby_archive ..."
+
+	ruby_md5="${ruby_md5:-$(ruby_checksum md5)}"
+	ruby_sha1="${ruby_sha1:-$(ruby_checksum sha1)}"
+	ruby_sha256="${ruby_sha256:-$(ruby_checksum sha256)}"
+	ruby_sha512="${ruby_sha512:-$(ruby_checksum sha512)}"
+
+	verify_checksum "$file" md5 "$ruby_md5"       || return $?
+	verify_checksum "$file" sha1 "$ruby_sha1"     || return $?
+	verify_checksum "$file" sha256 "$ruby_sha256" || return $?
+	verify_checksum "$file" sha512 "$ruby_sha512" || return $?
 }
 
 #
@@ -73,7 +93,7 @@ function extract_ruby()
 #
 function download_patches()
 {
-	local dest patch
+	local i patch dest
 
 	for (( i=0; i<${#patches[@]}; i++ )) do
 		patch="${patches[$i]}"
@@ -93,7 +113,7 @@ function download_patches()
 #
 function apply_patches()
 {
-	local name
+	local patch name
 
 	for patch in "${patches[@]}"; do
 		name="${patch##*/}"
@@ -127,3 +147,14 @@ function install_ruby() { return; }
 # Place holder function for post-install tasks.
 #
 function post_install() { return; }
+
+#
+# Remove downloaded archive and unpacked source.
+#
+function cleanup_source() {
+	log "Removing $src_dir/$ruby_archive ..."
+	rm "$src_dir/$ruby_archive" || return $?
+
+	log "Removing $src_dir/$ruby_src_dir ..."
+	rm -rf "$src_dir/$ruby_src_dir" || return $?
+}

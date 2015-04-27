@@ -2,8 +2,10 @@
 
 shopt -s extglob
 
-ruby_install_version="0.4.3"
+ruby_install_version="0.5.0"
 ruby_install_dir="${BASH_SOURCE[0]%/*}"
+
+source "$ruby_install_dir/versions.sh"
 
 rubies=(ruby jruby rbx maglev mruby)
 patches=()
@@ -25,14 +27,6 @@ fi
 #
 if   command -v wget >/dev/null; then downloader="wget"
 elif command -v curl >/dev/null; then downloader="curl"
-fi
-
-#
-# Auto-detect the md5 utility.
-#
-if   command -v md5sum  >/dev/null; then md5sum="md5sum"
-elif command -v md5     >/dev/null; then md5sum="md5"
-elif command -v openssl >/dev/null; then md5sum="openssl md5"
 fi
 
 #
@@ -95,9 +89,13 @@ function fetch()
 {
 	local file="$ruby_install_dir/$1.txt"
 	local key="$2"
-	local pair="$(grep -E "^$key:" "$file")"
+	local line
 
-	echo "${pair##$key:*([[:space:]])}"
+	while IFS="" read -r line; do
+		if [[ "$line" == "$key:"* ]]; then
+			echo "${line##$key:*([[:space:]])}"
+		fi
+	done < "$file"
 }
 
 function install_packages()
@@ -118,7 +116,7 @@ function install_packages()
 				$sudo pacman -S $missing_pkgs || return $?
 			fi
 			;;
-		"")	warn "Could not determine Package Manager. Proceeding anyways." ;;
+		"")	warn "Could not determine Package Manager. Proceeding anyway." ;;
 	esac
 }
 
@@ -143,30 +141,6 @@ function download()
 	esac
 
 	mv "$dest.part" "$dest" || return $?
-}
-
-#
-# Verifies a file against a md5 checksum.
-#
-function verify()
-{
-	local path="$1"
-	local md5="$2"
-
-	if [[ -z "$md5sum" ]]; then
-		error "Unable to find the md5 checksum utility"
-		return 1
-	fi
-
-	if [[ -z "$md5" ]]; then
-		error "No md5 checksum given"
-		return 1
-	fi
-
-	if [[ "$($md5sum "$path")" != *$md5* ]]; then
-		error "$path is invalid!"
-		return 1
-	fi
 }
 
 #
@@ -200,13 +174,20 @@ function load_ruby()
 		return 1
 	fi
 
-	local expanded_version="$(fetch "$ruby/versions" "$ruby_version")"
-	ruby_version="${expanded_version:-$ruby_version}"
+	local absolute_version="$(
+	  resolve_version "$ruby_version" \
+		          "$ruby_dir/versions.txt" \
+			  "$ruby_dir/stable.txt"
+	)"
+
+	if [[ -n "$absolute_version" ]]; then
+		ruby_version="$absolute_version"
+	else
+		warn "Unknown $ruby version: $ruby_version"
+	fi
 
 	source "$ruby_install_dir/functions.sh" || return $?
 	source "$ruby_dir/functions.sh" || return $?
-
-	ruby_md5="${ruby_md5:-$(fetch "$ruby/md5" "$ruby_archive")}"
 }
 
 #
@@ -214,11 +195,13 @@ function load_ruby()
 #
 function known_rubies()
 {
-	echo "Known ruby versions:"
+	local ruby
+
+	echo "Latest ruby versions:"
 
 	for ruby in ${rubies[@]}; do
 		echo "  $ruby:"
-		cat "$ruby_install_dir/$ruby/versions.txt" | sed -e 's/^/    /' || return $?
+		cat "$ruby_install_dir/$ruby/stable.txt" | sed -e 's/^/    /' || return $?
 	done
 }
 
@@ -232,16 +215,23 @@ usage: ruby-install [OPTIONS] [RUBY [VERSION] [-- CONFIGURE_OPTS ...]]
 
 Options:
 
-	-s, --src-dir DIR	Directory to download source-code into
 	-r, --rubies-dir DIR	Directory that contains other installed Rubies
 	-i, --install-dir DIR	Directory to install Ruby into
+	    --prefix DIR        Alias for -i DIR
+	    --system		Alias for -i /usr/local
+	-s, --src-dir DIR	Directory to download source-code into
+	-c, --cleanup		Remove archive and unpacked source-code after installation
 	-j, --jobs JOBS		Number of jobs to run in parallel when compiling
 	-p, --patch FILE	Patch to apply to the Ruby source-code
 	-M, --mirror URL	Alternate mirror to download the Ruby archive from
 	-u, --url URL		Alternate URL to download the Ruby archive from
 	-m, --md5 MD5		MD5 checksum of the Ruby archive
+	    --sha1 SHA1		SHA1 checksum of the Ruby archive
+	    --sha256 SHA256	SHA256 checksum of the Ruby archive
+	    --sha512 SHA512	SHA512 checksum of the Ruby archive
 	--no-download		Use the previously downloaded Ruby archive
 	--no-verify		Do not verify the downloaded Ruby archive
+	--no-extract		Do not re-extract the downloaded Ruby archive
 	--no-install-deps	Do not install build dependencies before installing Ruby
 	--no-reinstall  	Skip installation if another Ruby is detected in same location
 	-V, --version		Prints the version
@@ -273,13 +263,21 @@ function parse_options()
 				rubies_dir="$2"
 				shift 2
 				;;
-			-i|--install-dir)
+			-i|--install-dir|--prefix)
 				install_dir="$2"
 				shift 2
+				;;
+			--system)
+				install_dir="/usr/local"
+				shift 1
 				;;
 			-s|--src-dir)
 				src_dir="$2"
 				shift 2
+				;;
+			-c|--cleanup)
+				cleanup=1
+				shift
 				;;
 			-j|--jobs|-j+([0-9])|--jobs=+([0-9]))
 				make_opts+=("$1")
@@ -301,12 +299,30 @@ function parse_options()
 				ruby_md5="$2"
 				shift 2
 				;;
+			--sha1)
+				ruby_sha1="$2"
+				shift 2
+				;;
+			--sha256)
+				ruby_sha256="$2"
+				shift 2
+				;;
+			--sha512)
+				ruby_sha512="$2"
+				shift 2
+				;;
 			--no-download)
 				no_download=1
 				shift
 				;;
 			--no-verify)
 				no_verify=1
+				shift
+				;;
+			--no-extract)
+				no_download=1
+				no_verify=1
+				no_extract=1
 				shift
 				;;
 			--no-install-deps)
@@ -348,7 +364,7 @@ function parse_options()
 			;;
 		1)
 			ruby="${argv[0]}"
-			ruby_version="stable"
+			ruby_version=""
 			;;
 		0)
 			echo "ruby-install: too few arguments" >&2
