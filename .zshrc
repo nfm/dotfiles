@@ -13,7 +13,7 @@ export PATH="/usr/local/heroku/bin:$HOME/.local/bin:$HOME/.bin:$PATH"
 
 # Initialize chruby
 source $HOME/.local/share/chruby/chruby.sh
-chruby ruby-2.1.3
+chruby ruby-2.2.2
 
 # Initialize chpy
 source $HOME/.local/share/chpy/chpy.sh
