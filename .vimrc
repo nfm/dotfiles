@@ -27,6 +27,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
+Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'valloric/YouCompleteMe'
 Plugin 'mtscout6/vim-cjsx'
 call vundle#end()
@@ -123,6 +124,8 @@ nnoremap <Leader>tt :tag
 nnoremap <Leader>tn :tnext<CR>
 nnoremap <Leader>tp :tprevious<CR>
 nnoremap <Leader>tb :TagbarToggle<CR>
+nnoremap <C-]> :CtrlPtjump<CR>
+vnoremap <C-]> :CtrlPtjumpVisual<CR>
 
 " Configure wildcard expansion
 set wildmenu
@@ -138,6 +141,9 @@ let g:slime_paste_file = tempname()
 " Configure syntastic
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'coffee'], 'passive_filetypes': ['sass'] }
 let g:syntastic_auto_loc_list=1
+
+" Configure CtrlP and plugins
+let g:ctrlp_tjump_only_silent = 1
 
 " Configure rails.vim
 let g:rails_projections = {
