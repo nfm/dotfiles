@@ -119,7 +119,7 @@ set pastetoggle=<Leader>p
 nnoremap <Leader>q :close<CR>
 
 " Shortcuts for tags
-nnoremap <Leader>tt :tag
+nnoremap <Leader>tt :tag 
 nnoremap <Leader>tn :tnext<CR>
 nnoremap <Leader>tp :tprevious<CR>
 nnoremap <Leader>tb :TagbarToggle<CR>
