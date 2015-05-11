@@ -15,10 +15,6 @@ export PATH="/usr/local/heroku/bin:$HOME/.local/bin:$HOME/.bin:$PATH"
 source $HOME/.local/share/chruby/chruby.sh
 chruby ruby-2.2.2
 
-# Initialize chpy
-source $HOME/.local/share/chpy/chpy.sh
-chpy 2.7.9
-
 # Initialize nvm
 if [[ -e ~/.nvm/nvm.sh ]]
 then
