@@ -31,7 +31,7 @@ tmux new-window -t $SESSION_NAME:3 -n console
 tmux send-keys -t $SESSION_NAME:3 's rails console' C-m
 
 tmux new-window -t $SESSION_NAME:4 -n server
-tmux send-keys -t $SESSION_NAME:4 'be foreman start' C-m
+tmux send-keys -t $SESSION_NAME:4 'foreman start' C-m
 
 tmux select-window -t $SESSION_NAME:1
 tmux attach-session -d -t$SESSION_NAME
