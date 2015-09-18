@@ -192,6 +192,7 @@ let g:rails_projections = {
 " Configure fugitive
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>ga :Gwrite<CR>
+nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gd :Git! diff<CR>
 nnoremap <Leader>gdc :Git! diff --cached<CR>
