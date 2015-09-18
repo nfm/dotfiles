@@ -27,6 +27,7 @@
 	cane = commit --amend --no-edit
 
 	co = checkout
+	cob = checkout --branch
 
 	d = diff
 	dc = diff --cached
