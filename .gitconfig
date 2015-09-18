@@ -21,9 +21,9 @@
   an = !git add $(git ls-files -o --exclude-standard)
 
 	c = commit
-	cm = commit -m
+	cm = commit --message
 	ca = commit --amend
-	cam = commit -a -m
+	cam = commit --all --message
 	cane = commit --amend --no-edit
 
 	co = checkout
