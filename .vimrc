@@ -31,6 +31,7 @@ Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'valloric/YouCompleteMe'
 Plugin 'mtscout6/vim-cjsx'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'othree/yajs.vim'
 call vundle#end()
 
 set history=10000
