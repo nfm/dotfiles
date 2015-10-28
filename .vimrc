@@ -146,6 +146,7 @@ let g:syntastic_auto_loc_list=1
 
 " Configure CtrlP and plugins
 let g:ctrlp_tjump_only_silent = 1
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Configure rails.vim
 let g:rails_projections = {
