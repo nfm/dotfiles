@@ -1,0 +1,8 @@
+-- Auto-complete SQL keywords in uppercase
+\set COMP_KEYWORD_CASE upper
+
+-- Use table layout if possible, fall back to key-value layout if the table is too wide
+\x auto
+
+-- Output NULL instead of an empty string for NULLs
+\pset null NULL
