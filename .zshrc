@@ -19,7 +19,7 @@ chruby ruby-2.2.3
 if [[ -e ~/.nvm/nvm.sh ]]
 then
   source ~/.nvm/nvm.sh
-  nvm use 0.12 >> /dev/null
+  nvm use 5.0.0 >> /dev/null
 fi
 
 # Ruby performance improvements
