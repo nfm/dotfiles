@@ -32,6 +32,7 @@ Plugin 'valloric/YouCompleteMe'
 Plugin 'mtscout6/vim-cjsx'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'othree/yajs.vim'
+Plugin 'christoomey/vim-sort-motion'
 call vundle#end()
 
 set history=10000
