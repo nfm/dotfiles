@@ -10,3 +10,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   rsync -a --no-perms --out-format "%n%L" --exclude .git --exclude bootstrap.sh --exclude import.sh . ~/
 fi
+
+# Set up symlinks for vim
+ln -s ${XDG_CONFIG_HOME:=$HOME/.config}/nvim ~/.vim
+ln -s ${XDG_CONFIG_HOME:=$HOME/.config}/nvim/init.vim ~/.vimrc
