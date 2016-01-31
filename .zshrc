@@ -47,7 +47,7 @@ setopt extendedhistory
 autoload -Uz compinit
 
 # Include some custom completions (sourced from https://github.com/zsh-users/zsh-completions/)
-fpath=($HOME/.zsh/completions/src $fpath)
+fpath=($HOME/.zsh/completions $fpath)
 
 compinit
 
