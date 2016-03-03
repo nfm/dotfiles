@@ -1,0 +1,2 @@
+# Disable running all guards on <enter>
+Pry.commands.delete(/^$/)
