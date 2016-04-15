@@ -38,6 +38,11 @@
   # Use hub to compare master with develop before deploying
   cc = compare master...develop
 
+  # Use hub to open issues and PRs
+  is = "!f() { hub browse -- issues/$1; }; f"
+  pr = "!f() { hub browse -- pull/$1; }; f"
+  prs = browse -- pulls/
+
 	# Find files by file name
 	f = "!git ls-files | grep -i"
 
