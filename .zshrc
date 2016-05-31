@@ -3,7 +3,7 @@ source ~/.zsh/functions.zsh
 
 umask 077
 
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/bin/nvim
 
 # Solarized
 eval `dircolors ~/.zsh/dircolors/solarized.ansi-dark`
