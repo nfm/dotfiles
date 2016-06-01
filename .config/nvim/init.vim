@@ -137,6 +137,12 @@ set wildignore+=*/tmp
 " Search for word under cursor using ag
 nnoremap K :Ag!<CR>
 
+" Automatically delete and yank into the system clipboard
+set clipboard+=unnamedplus
+
+" Disable the mouse (NeoVim defaults to mouse=a)
+set mouse=
+
 " Configure vim-slime
 let g:slime_target = "tmux"
 let g:slime_paste_file = tempname()
