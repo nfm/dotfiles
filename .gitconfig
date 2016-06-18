@@ -7,6 +7,8 @@
 	default = current
 [branch]
 	autosetupmerge = true
+[diff]
+  compactionHeuristic = true
 [alias]
   s = status
 	b = branch
