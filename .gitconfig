@@ -9,6 +9,10 @@
 	autosetupmerge = true
 [diff]
   compactionHeuristic = true
+[core]
+  pager = diff-so-fancy | less --tabs=4 -RFX
+[interactive]
+  diffFilter = diff-so-fancy | less --tabs=4 -RFX
 [alias]
   s = status
 	b = branch
