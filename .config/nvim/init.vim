@@ -60,6 +60,7 @@ set tabstop=2
 
 " Show line numbers
 set number
+set relativenumber
 " Use lighter line number color
 highlight LineNr ctermfg=Grey
 
