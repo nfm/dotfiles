@@ -17,7 +17,7 @@ Plugin 'matchit.zip'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jpalardy/vim-slime'
@@ -60,6 +60,7 @@ set tabstop=2
 
 " Show line numbers
 set number
+set relativenumber
 " Use lighter line number color
 highlight LineNr ctermfg=Grey
 
@@ -134,8 +135,16 @@ vnoremap <C-]> :CtrlPtjumpVisual<CR>
 set wildmenu
 set wildignore+=*/tmp
 
-" Search for word under cursor using ag
-nnoremap K :Ag!<CR>
+" Configure ack.vim to use ag if available
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" Search for word under cursor using ack.vim
+nnoremap K :Ack!<CR>
+
+" Don't jump to first result when searching using ack.vim
+cnoreabbrev Ack Ack!
 
 " Automatically delete and yank into the system clipboard
 set clipboard+=unnamedplus

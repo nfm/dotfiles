@@ -1,5 +1,5 @@
 git_branch() {
-  REF=$(git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
+  REF=$(git symbolic-ref --short HEAD 2>/dev/null)
   REF=${REF:=$(git rev-parse HEAD 2>/dev/null | cut -c1-10)}
   echo -ne $REF
 }
