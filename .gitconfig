@@ -58,6 +58,10 @@
   ll = log --decorate --oneline
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 
+  log0 = log --first-parent -m
+  show0 = show --first-parent -m
+  blame0 = blame --first-parent -m
+
   # Print filenames of modified files
   mod = diff --name-only --diff-filter=AM
 
