@@ -33,6 +33,8 @@ Plugin 'mtscout6/vim-cjsx'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'othree/yajs.vim'
 Plugin 'christoomey/vim-sort-motion'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 call vundle#end()
 
 set history=10000
@@ -224,6 +226,9 @@ nnoremap <Leader>gdc :Git! diff --cached<CR>
 
 " Configure ycm
 let g:ycm_collect_identifiers_from_tags_files = 1
+
+" Configure UltiSnips
+let g:UltiSnipsExpandTrigger="<Leader><tab>"
 
 " View a gem's info on rubygems.org
 function! Gem()
