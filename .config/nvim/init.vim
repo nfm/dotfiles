@@ -34,6 +34,8 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'othree/yajs.vim'
 Plugin 'christoomey/vim-sort-motion'
 Plugin 'mxw/vim-jsx'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 call vundle#end()
 
 set history=10000
@@ -160,6 +162,13 @@ let g:slime_paste_file = tempname()
 " Configure syntastic
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'coffee'], 'passive_filetypes': ['sass'] }
 let g:syntastic_auto_loc_list=1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_javascript_checkers = ['eslint']
+" Use locally installed eslint and eslint plugins
+let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
+" Hacky fix to avoid having to install eslint globally, but ensure syntastic knows it's available
+let g:syntastic_javascript_eslint_exec = '/bin/ls'
 
 " Configure CtrlP and plugins
 let g:ctrlp_tjump_only_silent = 1
@@ -222,8 +231,8 @@ nnoremap <Leader>gdc :Git! diff --cached<CR>
 " Configure ycm
 let g:ycm_collect_identifiers_from_tags_files = 1
 
-" Look for tags in gems.tags file too
-set tags+=gems.tags
+" Configure UltiSnips
+let g:UltiSnipsExpandTrigger="<Leader><tab>"
 
 " View a gem's info on rubygems.org
 function! Gem()

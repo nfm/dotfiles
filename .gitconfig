@@ -14,6 +14,8 @@
   excludesfile = /home/nfm/.gitignore
 [interactive]
   diffFilter = diff-so-fancy | less --tabs=4 -RFX
+[web]
+  browser = xdg-open
 [alias]
   s = status
 	b = branch
@@ -57,6 +59,10 @@
 	ls = log --format='%C(yellow)%h%Creset%C(red)%d%Creset %s %C(blue)%aN%Creset %Cgreen(%ar)'
   ll = log --decorate --oneline
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+  log0 = log --first-parent -m
+  show0 = show --first-parent -m
+  blame0 = blame --first-parent -m
 
   # Print filenames of modified files
   mod = diff --name-only --diff-filter=AM
