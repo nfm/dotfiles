@@ -33,6 +33,7 @@ Plugin 'mtscout6/vim-cjsx'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'othree/yajs.vim'
 Plugin 'christoomey/vim-sort-motion'
+Plugin 'mxw/vim-jsx'
 call vundle#end()
 
 set history=10000
@@ -206,6 +207,9 @@ let g:rails_projections = {
 \    "command": "component"
 \  }
 \}
+
+" Configure JSX syntax highlighting
+let g:jsx_ext_required = 0
 
 " Configure fugitive
 nnoremap <Leader>gs :Gstatus<CR>
