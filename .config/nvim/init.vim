@@ -21,7 +21,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jpalardy/vim-slime'
-Plugin 'scrooloose/syntastic'
+Plugin 'neomake/neomake'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'altercation/vim-colors-solarized'
@@ -159,16 +159,14 @@ set mouse=
 let g:slime_target = "tmux"
 let g:slime_paste_file = tempname()
 
-" Configure syntastic
-let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'coffee'], 'passive_filetypes': ['sass'] }
-let g:syntastic_auto_loc_list=1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_javascript_checkers = ['eslint']
-" Use locally installed eslint and eslint plugins
-let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
-" Hacky fix to avoid having to install eslint globally, but ensure syntastic knows it's available
-let g:syntastic_javascript_eslint_exec = '/bin/ls'
+" Configure neomake
+autocmd! BufWritePost * Neomake
+let g:neomake_open_list=2
+let g:neomake_list_height=2
+let g:neomake_ruby_enabled_makers = ['rubocop']
+let g:neomake_javascript_enabled_makers = ['eslint']
+" TODO: Better handling of locally installed eslint
+let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 
 " Configure CtrlP and plugins
 let g:ctrlp_tjump_only_silent = 1
