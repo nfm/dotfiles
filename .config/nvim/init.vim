@@ -148,6 +148,9 @@ nnoremap <A-l> <C-w>l
 " Open horizontal split below the current window instead of above it
 set splitbelow
 
+" Launch a persistent buffer for a Rails console in a terminal
+nnoremap <Leader>rc :10split<CR>:terminal bin/rails console<CR><C-\><C-n>:set hidden<CR>:file console<CR>
+
 " Configure wildcard expansion
 set wildmenu
 set wildignore+=*/tmp
