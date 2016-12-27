@@ -148,8 +148,22 @@ nnoremap <A-l> <C-w>l
 " Open horizontal split below the current window instead of above it
 set splitbelow
 
-" Launch a persistent buffer for a Rails console in a terminal
-nnoremap <Leader>rc :10split<CR>:terminal bin/rails console<CR><C-\><C-n>:set hidden<CR>:file console<CR>
+function! RailsConsole()
+  execute "10split"
+
+  try
+    " Try to switch to the Rails console buffer
+    execute "buffer console"
+  catch /^Vim\%((\a\+)\)\=:E94/
+    " Start a Rails console buffer if there isn't one already open
+    execute "terminal bin/rails console" | execute "set hidden" | execute "file console"
+  endtry
+
+  execute "startinsert"
+endfunction
+
+command! RailsConsole call RailsConsole()
+nnoremap <Leader>rc :RailsConsole<CR>
 
 " Configure wildcard expansion
 set wildmenu
