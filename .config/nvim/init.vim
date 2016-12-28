@@ -145,6 +145,9 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
+" Always enter insert mode when navigating to a terminal buffer
+autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
+
 " Open horizontal split below the current window instead of above it
 set splitbelow
 
@@ -158,8 +161,6 @@ function! RailsConsole()
     " Start a Rails console buffer if there isn't one already open
     execute "terminal bin/rails console" | execute "set hidden" | execute "file console"
   endtry
-
-  execute "startinsert"
 endfunction
 
 command! RailsConsole call RailsConsole()
