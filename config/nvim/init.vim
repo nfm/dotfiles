@@ -37,6 +37,7 @@ Plugin 'christoomey/vim-sort-motion'
 Plugin 'mxw/vim-jsx'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'editorconfig/editorconfig-vim'
 call vundle#end()
 
 set history=10000
