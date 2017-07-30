@@ -25,13 +25,13 @@ tmux new-session -d -s $SESSION_NAME -n dev
 tmux split-window -v -d -p10 -t $SESSION_NAME:1
 
 tmux new-window -t $SESSION_NAME:2 -n tests
-tmux send-keys -t $SESSION_NAME:2 'bundle exec guard' C-m
+tmux send-keys -t $SESSION_NAME:2 'docker-compose run --name usabilityhub_guard --rm web bundle exec guard' C-m
 
 tmux new-window -t $SESSION_NAME:3 -n console
-tmux send-keys -t $SESSION_NAME:3 './bin/rails console' C-m
+tmux send-keys -t $SESSION_NAME:3 'docker-compose run --name usabilityhub_console --rm web bin/rails console' C-m
 
 tmux new-window -t $SESSION_NAME:4 -n server
-tmux send-keys -t $SESSION_NAME:4 'foreman start' C-m
+tmux send-keys -t $SESSION_NAME:4 'docker-sync-stack start' C-m
 
 tmux select-window -t $SESSION_NAME:1
 tmux attach-session -d -t$SESSION_NAME
