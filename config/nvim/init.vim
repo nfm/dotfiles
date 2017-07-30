@@ -167,6 +167,9 @@ endfunction
 command! RailsConsole call RailsConsole()
 nnoremap <Leader>rc :RailsConsole<CR>
 
+" Shortcut to open a zsh terminal in a split
+nnoremap <Leader>te :20split term://zsh<CR>
+
 " Configure wildcard expansion
 set wildmenu
 set wildignore+=*/tmp
