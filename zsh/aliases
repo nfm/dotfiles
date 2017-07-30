@@ -14,3 +14,4 @@ alias cleanup="trunc log/development.log log/test.log; rm -rf tmp/cache tmp/cove
 alias vim="/usr/bin/nvim"
 alias git="hub"
 alias docker-compose="USERID=$(id -u $(whoami)) GROUPID=$(id -g $(whoami)) docker-compose"
+alias docker-sync-stack="USERID=$(id -u $(whoami)) GROUPID=$(id -g $(whoami)) docker-sync-stack"
