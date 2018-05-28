@@ -19,7 +19,7 @@ chruby ruby-2.4.2
 if [[ -e ~/.nvm/nvm.sh ]]
 then
   source ~/.nvm/nvm.sh
-  nvm use 6.9.1 >> /dev/null
+  nvm use 8.9.0 >> /dev/null
 fi
 
 # Ruby performance improvements
