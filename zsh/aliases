@@ -15,3 +15,6 @@ alias vim="/usr/bin/nvim"
 alias git="hub"
 alias docker-compose="USERID=$(id -u $(whoami)) GROUPID=$(id -g $(whoami)) docker-compose"
 alias docker-sync-stack="USERID=$(id -u $(whoami)) GROUPID=$(id -g $(whoami)) docker-sync-stack"
+alias copy='xclip -selection clipboard'
+alias paste='xclip -selection clipboard -o'
+alias tailf='tail -f'
