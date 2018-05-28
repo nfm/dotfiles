@@ -10,7 +10,6 @@ from __future__ import print_function
 import sys
 import os
 import pickle
-import re
 
 import parse
 import format
@@ -23,11 +22,11 @@ from screenFlags import ScreenFlags
 def getLineObjs(flags):
     inputLines = sys.stdin.readlines()
     return getLineObjsFromLines(inputLines,
-                                validateFileExists=False if
-                                flags.getDisableFileChecks() else True)
+                                validateFileExists=not flags.getDisableFileChecks(),
+                                allInput=flags.getAllInput())
 
 
-def getLineObjsFromLines(inputLines, validateFileExists=True):
+def getLineObjsFromLines(inputLines, validateFileExists=True, allInput=False):
     lineObjs = {}
     for index, line in enumerate(inputLines):
         line = line.replace('\t', '    ')
@@ -37,13 +36,15 @@ def getLineObjsFromLines(inputLines, validateFileExists=True):
         line = line.replace('\n', '')
         formattedLine = FormattedText(line)
         result = parse.matchLine(str(formattedLine),
-                                 validateFileExists=validateFileExists)
+                                 validateFileExists=validateFileExists,
+                                 allInput=allInput)
 
         if not result:
             line = format.SimpleLine(formattedLine, index)
         else:
             line = format.LineMatch(formattedLine, result,
-                                    index, validateFileExists=validateFileExists)
+                                    index, validateFileExists=validateFileExists,
+                                    allInput=allInput)
 
         lineObjs[index] = line
 
@@ -73,11 +74,10 @@ if __name__ == '__main__':
 
     if sys.stdin.isatty():
         if os.path.isfile(stateFiles.getPickleFilePath()):
-            print('Using old result...')
+            print('Using previous input piped to fpp...')
         else:
             usage()
         # let the next stage parse the old version
-        sys.exit(0)
     else:
         # delete the old selection
         selectionPath = stateFiles.getSelectionFilePath()
@@ -85,4 +85,5 @@ if __name__ == '__main__':
             os.remove(selectionPath)
 
         doProgram(flags)
-        sys.exit(0)
+
+    sys.exit(0)

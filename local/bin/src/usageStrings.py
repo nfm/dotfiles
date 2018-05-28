@@ -8,10 +8,25 @@
 from __future__ import print_function
 from screenFlags import ScreenFlags
 
-USAGE_INTRO = '''
+MANPAGE_HEADER = '''= fpp(1)
+'''
+
+MANPAGE_NAME_SECTION = '''
+== NAME
+
+fpp - Facebook PathPicker; a command line tool for selecting files out of bash output
+'''
+
+USAGE_INTRO_PRE = '''
 Welcome to fpp, the Facebook PathPicker! We hope your stay
 with us is enjoyable.
+'''
 
+MANPAGE_INTRO_PRE = '''
+== INTRO
+'''
+
+INTRO = '''
 To get started with fpp, pipe some kind of terminal output into the program.
 Examples include:
 
@@ -27,6 +42,13 @@ will put you inside a pager that will allow you to select files with the
 following commands:
 '''
 
+USAGE_INTRO = USAGE_INTRO_PRE + INTRO
+
+MANPAGE_SYNOPSIS = '''
+== SYNOPSIS
+
+'''
+
 USAGE_PAGE_HEADER = '''
 == Navigation ==
 
@@ -34,11 +56,15 @@ USAGE_PAGE_HEADER = '''
 
 USAGE_PAGE = '''
     * [f] toggle the selection of a file
+    * [F] toggle and move downward by 1
     * [A] toggle selection of all (unique) files
     * [down arrow|j] move downward by 1
     * [up arrow|k] move upward by 1
     * [<space>] page down
     * [b] page up
+    * [x] quick select mode
+    * [d] describe file
+
 
 Once you have your files selected, you can
 either open them in your favorite
@@ -100,6 +126,16 @@ which editor to open the selected files with. If that variable
 is not set, $VISUAL and then $EDITOR are used as fallbacks,
 with "vim" as a last resort.
 
+The $FPP_DISABLE_SPLIT environment variable will disable splitting
+files into panes for vim clients (aka sequential editing).
+
+~ Directory ~
+
+PathPicker saves state files for use when starting up, including the
+previous input used and selection pickle. By default, these files are saved
+in ~/.fpp, but the $FPP_DIR environment variable can be used to tell
+PathPicker to use another directory.
+
 ~ Colors ~
 
 FPP will understand colors if the piped input uses them. In general, most
@@ -139,3 +175,23 @@ USAGE_STR = USAGE_INTRO + \
 
 decorator = '*' * 80
 USAGE_STR = decorator + '\n' + USAGE_STR + '\n' + decorator
+
+
+MANPAGE_STR = '\n\n'.join([
+    MANPAGE_HEADER,
+    MANPAGE_NAME_SECTION,
+    MANPAGE_SYNOPSIS,
+    # FIXME: asciidoc example block?
+    # http://www.methods.co.nz/asciidoc/userguide.html#X48
+    ScreenFlags.getArgParser().format_help(),
+    MANPAGE_INTRO_PRE,
+    INTRO,
+    USAGE_PAGE_HEADER,
+    USAGE_PAGE,
+    USAGE_COMMAND_HEADER,
+    USAGE_COMMAND,
+    USAGE_CONFIGURATION,
+])
+
+if __name__ == '__main__':
+    print(MANPAGE_STR)

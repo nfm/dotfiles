@@ -11,7 +11,6 @@ import curses
 import pickle
 import sys
 import os
-import argparse
 
 import output
 import screenControl
@@ -49,6 +48,7 @@ def getLineObjs():
         lineObjs = pickle.load(open(filePath, 'rb'))
     except:
         output.appendError(LOAD_SELECTION_WARNING)
+        output.appendExit()
         sys.exit(1)
     logger.addEvent('total_num_files', len(lineObjs))
 
@@ -59,7 +59,8 @@ def getLineObjs():
     matches = [lineObj for lineObj in lineObjs.values()
                if not lineObj.isSimple()]
     if not len(matches):
-        output.writeToFile('echo "No lines matched!!"')
+        output.writeToFile('echo "No lines matched!!";')
+        output.appendExit()
         sys.exit(0)
     return lineObjs
 
@@ -69,6 +70,7 @@ def setSelectionsFromPickle(selectionPath, lineObjs):
         selectedIndices = pickle.load(open(selectionPath, 'rb'))
     except:
         output.appendError(LOAD_SELECTION_WARNING)
+        output.appendExit()
         sys.exit(1)
     for index in selectedIndices:
         if index >= len(lineObjs.items()):
@@ -87,7 +89,8 @@ if __name__ == '__main__':
     filePath = stateFiles.getPickleFilePath()
     if not os.path.exists(filePath):
         print('Nothing to do!')
-        output.writeToFile('echo ":D"')
+        output.writeToFile('echo ":D";')
+        output.appendExit()
         sys.exit(0)
     output.clearFile()
     # we initialize our args *before* we move into curses

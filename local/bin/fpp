@@ -21,16 +21,39 @@ done
 BASEDIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 PYTHONCMD="python"
+NONINTERACTIVE=false
+
+if [ -z "$FPP_DIR" ]; then
+  FPP_DIR="$HOME/.fpp"
+fi
 
 function doProgram {
   # process input from pipe and store as pickled file
   $PYTHONCMD "$BASEDIR/src/processInput.py" "$@"
+  # if it failed, just fail now and exit the script
+  # this works for the looping -ko case as well
+  if [[ $? != 0 ]]; then exit $?; fi
   # now close stdin and choose input...
   exec 0<&-
 
   $PYTHONCMD "$BASEDIR/src/choose.py" "$@" < /dev/tty
-  # execute the output bash script
-  sh ~/.fpp/.fpp.sh < /dev/tty
+  # Determine if running from within vim shell
+  IFLAG=""
+  if [ -z "$VIMRUNTIME" -a "$NONINTERACTIVE" = false ]; then
+    IFLAG="-i"
+  fi
+  # execute the output bash script. For zsh or bash
+  # shells, we delegate to $SHELL, but for all others
+  # (fish, csh, etc) we delegate to bash.
+  #
+  # We use the following heuristics from
+  # http://stackoverflow.com/questions/3327013/
+  # in order to determine which shell we are on
+  if [ -n "$BASH" -o -n "$ZSH_NAME" ]; then
+    $SHELL $IFLAG "$FPP_DIR/.fpp.sh" < /dev/tty
+  else
+    /bin/bash $IFLAG "$FPP_DIR/.fpp.sh" < /dev/tty
+  fi
 }
 
 # we need to handle the --help option outside the python
@@ -49,6 +72,8 @@ for opt in "$@"; do
     exit 0
   elif [ "$opt" == "--record" -o "$opt" == "-r" ]; then
     echo "Recording input and output..."
+  elif [ "$opt" == "--non-interactive" -o "$opt" == "-ni" ]; then
+    NONINTERACTIVE=true
   elif [ "$opt" == "--keep-open" -o "$opt" == "-ko" ]; then
     # allow control-c to exit the loop
     # http://unix.stackexchange.com/a/48432
