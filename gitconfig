@@ -16,6 +16,8 @@
   excludesfile = /home/nfm/.gitignore
 [interactive]
   diffFilter = diff-so-fancy | less --tabs=4 -RFX
+[merge]
+  conflictstyle = diff3
 [web]
   browser = xdg-open
 [alias]
