@@ -9,6 +9,8 @@
 	autosetupmerge = true
 [diff]
   compactionHeuristic = true
+  renames = copies
+  renamelimit = 0
 [core]
   pager = diff-so-fancy | less --tabs=4 -RFX
   excludesfile = /home/nfm/.gitignore
@@ -40,6 +42,8 @@
 
 	d = diff
 	dc = diff --cached
+  # Diff with a lower rename detection percentage than default
+  dr = diff --find-renames=30
 
   # List all tags, using version ordering rather than alphabetic ordering
 	t = !git tag | sort -V
