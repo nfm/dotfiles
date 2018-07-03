@@ -2,3 +2,5 @@ bundle/cache
 
 # Ignore installed vim bundles
 config/nvim/bundle
+
+local/share
