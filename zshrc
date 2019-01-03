@@ -13,13 +13,13 @@ export PATH="/usr/local/heroku/bin:$HOME/.local/bin:$HOME/.bin:$PATH"
 
 # Initialize chruby
 source $HOME/.local/share/chruby/chruby.sh
-chruby ruby-2.4.2
+chruby ruby-2.4.5
 
 # Initialize nvm
 if [[ -e ~/.nvm/nvm.sh ]]
 then
   source ~/.nvm/nvm.sh
-  nvm use 8.9.0 >> /dev/null
+  nvm use 10.13.0 >> /dev/null
 fi
 
 # Ruby performance improvements
