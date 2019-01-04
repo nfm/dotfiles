@@ -29,7 +29,18 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1.25
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=600000
 export RUBY_GC_HEAP_FREE_SLOTS=600000
-export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.1
+
+# Ubuntu bionic and below has libjemalloc1, cosmic and above has libjemalloc2
+LIBJEMALLOC1="/usr/lib/x86_64-linux-gnu/libjemalloc.so.1"
+LIBJEMALLOC2="/usr/lib/x86_64-linux-gnu/libjemalloc.so.2"
+
+if [[ -e ${LIBJEMALLOC1} ]]
+then
+  export LD_PRELOAD=${LIBJEMALLOC1}
+elif [[ -e ${LIBJEMALLOC2} ]]
+then
+  export LD_PRELOAD=${LIBJEMALLOC2}
+fi
 
 # Set up the prompt
 autoload -U colors && colors
