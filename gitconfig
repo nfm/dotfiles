@@ -15,7 +15,8 @@
   pager = diff-so-fancy | less --tabs=4 -RFX
   excludesfile = /home/nfm/.gitignore
 [interactive]
-  diffFilter = diff-so-fancy | less --tabs=4 -RFX
+  # Disable diff-so-fancy with git add --patch for now, see https://github.com/so-fancy/diff-so-fancy/issues/35
+  #diffFilter = diff-so-fancy | less --tabs=4 -RFX
 [merge]
   conflictstyle = diff3
 [web]
