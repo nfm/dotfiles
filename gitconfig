@@ -30,6 +30,7 @@
 
 	a = add
 	ai = add --interactive
+	ap = add --patch
 	au = add --update
   # Add only new files
   an = !git add $(git ls-files -o --exclude-standard)
