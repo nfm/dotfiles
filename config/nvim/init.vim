@@ -29,7 +29,6 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
-Plugin 'valloric/YouCompleteMe'
 Plugin 'mtscout6/vim-cjsx'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'othree/yajs.vim'
@@ -262,9 +261,6 @@ nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gd :Git! diff<CR>
 nnoremap <Leader>gdc :Git! diff --cached<CR>
-
-" Configure ycm
-let g:ycm_collect_identifiers_from_tags_files = 1
 
 " Configure UltiSnips
 let g:UltiSnipsExpandTrigger="<Leader><tab>"
