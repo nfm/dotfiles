@@ -1,3 +1,6 @@
+# Load profiling module to benchmark time taken to initialize zsh
+# zmodload zsh/zprof
+
 source ~/.zsh/aliases
 source ~/.zsh/functions.zsh
 
@@ -97,3 +100,6 @@ zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
 
 bindkey -M viins 'jj' vi-cmd-mode
+
+# Call zprof to display profiler output
+# zprof
