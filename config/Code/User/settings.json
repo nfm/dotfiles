@@ -1,0 +1,63 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "workbench.colorTheme": "Solarized Dark",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "editor.folding": false,
+  "vim.enableNeovim": true,
+  "editor.renderIndentGuides": false,
+  "ruby.lint": {
+    "rubocop": true
+  },
+  "vim.useCtrlKeys": false,
+  "editor.rulers": [100],
+  "gitlens.keymap": "chorded",
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": false,
+    "suppressShowKeyBindingsNotice": true
+  },
+  "npm.enableScriptExplorer": true,
+  "npm.packageManager": "yarn",
+  "gitlens.historyExplorer.enabled": true,
+  "emmet.includeLanguages": {
+    "erb": "html"
+  },
+  "editor.tabSize": 2,
+  "gitlens.gitExplorer.files.layout": "auto",
+  "window.zoomLevel": 0,
+  "typescript.preferences.quoteStyle": "double",
+  "explorer.confirmDelete": false,
+  "editor.lineNumbers": "relative",
+  "editor.formatOnSave": true,
+  "window.menuBarVisibility": "default",
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<leader>", "e", "w"],
+      "commands": ["editor.emmet.action.wrapWithAbbreviation"]
+    }
+  ],
+  "vim.leader": ",",
+  "explorer.confirmDragAndDrop": false,
+  "editor.minimap.enabled": true,
+  "breadcrumbs.enabled": true,
+  "vim.textwidth": 100,
+  "window.titleBarStyle": "custom",
+  "gitlens.views.repositories.files.layout": "auto",
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  /*
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  */
+  "tabnine.disable_file_regex": [
+    "[.]tsx?$"
+  ],
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.neovimPath": "/usr/bin/nvim"
+}

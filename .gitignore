@@ -3,4 +3,7 @@ bundle/cache
 # Ignore installed vim bundles
 config/nvim/bundle
 
+# Ignore vscode config by default, it has a lot of cache files in this directory
+config/Code
+
 local/share
