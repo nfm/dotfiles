@@ -6,4 +6,42 @@ config/nvim/bundle
 # Ignore vscode config by default, it has a lot of cache files in this directory
 config/Code
 
+# Ignore files and dirs that don't have any useful config to version or should not be published
+config/Empathy
+config/Insync
+config/Postman
+config/QtProject.conf
+config/Skype
+config/Slack
+config/TabNine
+config/Trolltech.conf
+# Created by zoom
+config/Unknown\ Organization/
+config/VirtualBox
+config/eog
+config/evince
+config/gedit
+config/gnome-initial-setup-done
+config/hub
+config/htop
+config/ibus
+config/inkscape
+config/libreoffice
+config/menus
+config/monitors-v1-backup.xml
+config/monitors.xml*
+config/nautilus
+config/pulse
+config/signond
+config/software-center
+config/sqlitebrowser
+config/totem
+config/transmission
+config/unity
+config/update-notifier
+config/vlc
+config/xfce4
+config/yarn
+config/zoomus.conf
+
 local/share
