@@ -26,7 +26,10 @@ Plugin 'neomake/neomake'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'airblade/vim-gitgutter'
+" vim-gitgutter is causing neovim (as of v0.4.0-dev) to hang when opening
+" files while launching nvim. Unsure why. Maybe
+" https://github.com/airblade/vim-gitgutter/issues/584?
+"Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'mtscout6/vim-cjsx'
