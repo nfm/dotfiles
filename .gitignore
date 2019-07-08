@@ -18,10 +18,18 @@ config/Trolltech.conf
 # Created by zoom
 config/Unknown\ Organization/
 config/VirtualBox
+config/autostart
+config/configstore
+# Binary config file, possibly unsafe to push
+config/dconf
+config/enchant
 config/eog
+config/evolution
 config/evince
 config/gedit
 config/gnome-initial-setup-done
+config/google-chrome-beta
+config/gtk-3.0
 config/hub
 config/htop
 config/ibus
@@ -44,4 +52,6 @@ config/xfce4
 config/yarn
 config/zoomus.conf
 
+local/include/python2.7
+local/lib/python2.7
 local/share
