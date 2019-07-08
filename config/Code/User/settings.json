@@ -60,5 +60,8 @@
   },
   */
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "vim.neovimPath": "/usr/bin/nvim"
+  "vim.neovimPath": "/usr/bin/nvim",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
