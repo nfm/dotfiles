@@ -59,9 +59,6 @@
     "source.organizeImports": true
   },
   */
-  "tabnine.disable_file_regex": [
-    "[.]tsx?$"
-  ],
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.neovimPath": "/usr/bin/nvim"
 }
