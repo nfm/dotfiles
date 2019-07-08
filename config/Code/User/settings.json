@@ -23,12 +23,10 @@
   },
   "npm.enableScriptExplorer": true,
   "npm.packageManager": "yarn",
-  "gitlens.historyExplorer.enabled": true,
   "emmet.includeLanguages": {
     "erb": "html"
   },
   "editor.tabSize": 2,
-  "gitlens.gitExplorer.files.layout": "auto",
   "window.zoomLevel": 0,
   "typescript.preferences.quoteStyle": "double",
   "explorer.confirmDelete": false,
