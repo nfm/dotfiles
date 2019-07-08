@@ -39,6 +39,12 @@
       "commands": ["editor.emmet.action.wrapWithAbbreviation"]
     }
   ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.tasks.test"]
+    }
+  ],
   "vim.leader": ",",
   "explorer.confirmDragAndDrop": false,
   "editor.minimap.enabled": true,
