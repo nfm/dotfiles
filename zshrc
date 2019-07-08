@@ -67,6 +67,9 @@ then
   export LD_PRELOAD=${LIBJEMALLOC2}
 fi
 
+# Temporary fix for rustc segfaulting
+unset LD_PRELOAD
+
 # Set up the prompt
 autoload -U colors && colors
 source ~/.zsh/prompt.zsh
