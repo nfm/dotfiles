@@ -39,6 +39,7 @@ config/menus
 config/monitors-v1-backup.xml
 config/monitors.xml*
 config/nautilus
+config/pgcli
 config/pulse
 config/signond
 config/software-center
