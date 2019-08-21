@@ -23,6 +23,7 @@
   },
   "npm.enableScriptExplorer": true,
   "npm.packageManager": "yarn",
+  "emmet.showExpandedAbbreviation": "never",
   "emmet.includeLanguages": {
     "erb": "html"
   },
@@ -64,4 +65,10 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "shellcheck.disableVersionCheck": true
 }
