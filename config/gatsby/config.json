@@ -1,0 +1,8 @@
+{
+	"telemetry": {
+		"enabled": false
+	},
+	"cli": {
+		"packageManager": "npm"
+	}
+}
