@@ -18,3 +18,4 @@ alias docker-sync-stack="USERID=$(id -u $(whoami)) GROUPID=$(id -g $(whoami)) do
 alias copy='xclip -selection clipboard'
 alias paste='xclip -selection clipboard -o'
 alias tailf='tail -f'
+alias k=kubectl
