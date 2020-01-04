@@ -44,6 +44,7 @@ config/pulse
 config/signond
 config/software-center
 config/sqlitebrowser
+config/stripe
 config/totem
 config/transmission
 config/unity
