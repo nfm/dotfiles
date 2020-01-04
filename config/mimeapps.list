@@ -76,6 +76,7 @@ image/x-pcx=eog.desktop;
 image/svg+xml=eog.desktop;
 image/svg+xml-compressed=eog.desktop;
 image/vnd.wap.wbmp=eog.desktop;
+application/ogg=vlc.desktop;
 
 [Default Applications]
 image/png=eog.desktop
