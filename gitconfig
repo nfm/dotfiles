@@ -78,3 +78,5 @@
   # Set up a file watcher that displays a realtime diff as things are staged
   w = "! clear && git diff; inotifywait --quiet --monitor --recursive --event create,move_self,close_write --format '%f %e' @./.git/ . | while read file; do clear && git diff; done;"
   wc = "! clear && git diff --cached; inotifywait --quiet --monitor --recursive --event create,move_self,close_write --format '%f %e' .git/ | while read file; do clear && git diff --cached; done;"
+
+  pushf = push --force-with-lease
