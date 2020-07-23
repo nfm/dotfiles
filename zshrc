@@ -7,6 +7,7 @@ source ~/.zsh/functions.zsh
 umask 077
 
 export EDITOR=/usr/bin/nvim
+export BROWSER=/usr/bin/firefox
 
 # Solarized
 eval `dircolors ~/.zsh/dircolors/solarized.ansi-dark`
