@@ -81,7 +81,7 @@ application/ogg=vlc.desktop;
 [Default Applications]
 image/png=eog.desktop
 x-scheme-handler/http=firefox.desktop
-text/html=code-url-handler.desktop
+text/html=firefox.desktop
 text/xml=firefox.desktop
 application/xhtml+xml=firefox.desktop
 application/xml=firefox.desktop
