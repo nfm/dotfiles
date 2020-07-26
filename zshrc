@@ -1,3 +1,6 @@
+# Sourced in interactive shells.
+# Should contain commands to set up aliases, functions, options, key bindings, etc.
+
 # Load profiling module to benchmark time taken to initialize zsh
 # zmodload zsh/zprof
 
