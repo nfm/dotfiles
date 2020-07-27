@@ -15,9 +15,6 @@ export BROWSER=/usr/bin/firefox
 # Solarized
 eval `dircolors ~/.zsh/dircolors/solarized.ansi-dark`
 
-# PATH
-export PATH="/usr/local/heroku/bin:$HOME/.local/bin:$HOME/.bin:$(yarn global bin):$PATH"
-
 # Initialize chruby
 source $HOME/.local/share/chruby/chruby.sh
 chruby ruby-2.7.1

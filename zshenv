@@ -4,3 +4,5 @@
 
 # Don't call compinit automatically, we call this manually in .zshrc and calling it twice is unnecessarily slow.
 skip_global_compinit=1
+
+export PATH="$HOME/.local/bin:$HOME/.bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$PATH"
