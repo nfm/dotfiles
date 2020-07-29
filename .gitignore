@@ -7,6 +7,8 @@ config/nvim/bundle
 config/Code
 
 # Ignore files and dirs that don't have any useful config to version or should not be published
+# flameshot
+config/Dharkael
 config/Empathy
 config/Insync
 config/Postman
