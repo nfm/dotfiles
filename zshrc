@@ -114,11 +114,19 @@ autoload zmv
 # Use vi mode
 bindkey -v
 
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
 # Bind keys for history searching
 bindkey -M viins '^R' history-incremental-pattern-search-backward
 bindkey -M viins '^F' history-incremental-pattern-search-forward
 bindkey -M viins '^P' up-history
 bindkey -M viins '^N' down-history
+bindkey -M viins '^[.' insert-last-word
+bindkey "^[OA" up-line-or-beginning-search # Up
+bindkey "^[OB" down-line-or-beginning-search # Down
 
 # Use C-x C-e to edit the current command line
 autoload -U edit-command-line
