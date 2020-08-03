@@ -12,9 +12,8 @@ alias trunc="truncate --size=0"
 alias tmux="TERM=screen-256color-bce tmux"
 alias cleanup="trunc log/development.log log/test.log; rm -rf tmp/cache tmp/coverage tmp/assets"
 alias vim="/usr/bin/nvim"
-alias docker-compose="USERID=$(id -u $(whoami)) GROUPID=$(id -g $(whoami)) docker-compose"
+alias docker-compose="CURRENT_UID=$(id -u) CURRENT_GID=$(id -g) docker-compose"
 alias dc="docker-compose"
-alias docker-sync-stack="USERID=$(id -u $(whoami)) GROUPID=$(id -g $(whoami)) docker-sync-stack"
 alias copy='xclip -selection clipboard'
 alias paste='xclip -selection clipboard -o'
 alias tailf='tail -f'
