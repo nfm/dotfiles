@@ -38,6 +38,10 @@
     {
       "before": ["<leader>", "e", "w"],
       "commands": ["editor.emmet.action.wrapWithAbbreviation"]
+    },
+    {
+      "before": ["<leader>", "e", "l"],
+      "commands": ["editor.emmet.action.wrapIndividualLinesWithAbbreviation"]
     }
   ],
   "vim.normalModeKeyBindings": [
