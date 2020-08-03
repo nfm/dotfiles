@@ -80,6 +80,7 @@
   },
   "ruby.specPattern": "test",
   "ruby.specCommand": "bin/rails test",
+  "ruby.useLanguageServer": true,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "[typescript]": {
