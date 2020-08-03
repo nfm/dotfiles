@@ -48,6 +48,14 @@
     {
       "before": ["<leader>", "t"],
       "commands": ["workbench.action.tasks.test"]
+    },
+    {
+      "before": ["<leader>", "r", "t"],
+      "commands": ["extension.runSpecLine"]
+    },
+    {
+      "before": ["<leader>", "r", "r"],
+      "commands": ["extension.runLastSpec"]
     }
   ],
   "vim.leader": ",",
@@ -70,6 +78,8 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "ruby.specPattern": "test",
+  "ruby.specCommand": "bin/rails test",
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "[typescript]": {
