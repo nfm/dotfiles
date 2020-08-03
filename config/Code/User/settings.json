@@ -3,12 +3,10 @@
   "workbench.colorTheme": "Solarized Dark",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "editor.folding": false,
-  "vim.enableNeovim": true,
   "editor.renderIndentGuides": false,
   "ruby.lint": {
     "rubocop": true
   },
-  "vim.useCtrlKeys": false,
   "editor.rulers": [100],
   "gitlens.keymap": "chorded",
   "gitlens.advanced.messages": {
@@ -34,6 +32,8 @@
   "editor.lineNumbers": "relative",
   "editor.formatOnSave": true,
   "window.menuBarVisibility": "default",
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/usr/bin/nvim",
   "vim.visualModeKeyBindings": [
     {
       "before": ["<leader>", "e", "w"],
@@ -47,10 +47,12 @@
     }
   ],
   "vim.leader": ",",
+  // Wrap to N characters when using gq
+  "vim.textwidth": 100,
+  "vim.useCtrlKeys": false,
   "explorer.confirmDragAndDrop": false,
   "editor.minimap.enabled": true,
   "breadcrumbs.enabled": true,
-  "vim.textwidth": 100,
   "window.titleBarStyle": "custom",
   "gitlens.views.repositories.files.layout": "auto",
   "gitlens.views.fileHistory.enabled": true,
@@ -61,10 +63,9 @@
   },
   */
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "vim.neovimPath": "/usr/bin/nvim",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "[typescript]": {
