@@ -54,5 +54,21 @@
   {
     "key": "ctrl+b ,",
     "command": "workbench.action.terminal.rename"
+  },
+  {
+    "key": "meta+r",
+    "command": "-extension.runAllSpecFiles"
+  },
+  {
+    "key": "shift+meta+t",
+    "command": "-extension.runFileSpecs"
+  },
+  {
+    "key": "meta+y",
+    "command": "-extension.runLastSpec"
+  },
+  {
+    "key": "meta+l",
+    "command": "-extension.runSpecLine"
   }
 ]
