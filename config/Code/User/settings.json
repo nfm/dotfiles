@@ -98,6 +98,12 @@
   "vim.easymotionMarkerBackgroundColor": "red",
   "vim.easymotionMarkerHeight": 16
   "shellcheck.disableVersionCheck": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "files.defaultLanguage": "${activeEditorLanguage}"
 }
