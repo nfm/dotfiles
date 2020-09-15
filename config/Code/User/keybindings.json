@@ -70,5 +70,21 @@
   {
     "key": "meta+l",
     "command": "-extension.runSpecLine"
+  },
+  {
+    "key": "ctrl+b s",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+b j",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
   }
 ]
