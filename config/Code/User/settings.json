@@ -56,6 +56,10 @@
     {
       "before": ["<leader>", "r", "r"],
       "commands": ["extension.runLastSpec"]
+    },
+    {
+      "before": ["<leader>", "r", "f"],
+      "commands": ["extension.runFileSpecs"]
     }
   ],
   "vim.leader": ",",
