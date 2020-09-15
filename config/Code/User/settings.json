@@ -98,5 +98,6 @@
   "vim.easymotionMarkerBackgroundColor": "red",
   "vim.easymotionMarkerHeight": 16
   "shellcheck.disableVersionCheck": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "files.defaultLanguage": "${activeEditorLanguage}"
 }
