@@ -91,11 +91,12 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "shellcheck.disableVersionCheck": true,
   "vim.camelCaseMotion.enable": true,
   "vim.easymotion": true,
   "vim.easymotionMarkerFontFamily": "Droid Sans Mono",
   "vim.easymotionMarkerFontSize": "18",
   "vim.easymotionMarkerBackgroundColor": "red",
   "vim.easymotionMarkerHeight": 16
+  "shellcheck.disableVersionCheck": true,
+  "files.defaultLanguage": "${activeEditorLanguage}"
 }
