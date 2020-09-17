@@ -83,7 +83,7 @@
   {
     "key": "alt+u",
     "command": "extension.vim_ctrl+u",
-    "when": "editorTextFocus && vim.active && vim.use<C-u> && !inDebugRepl"
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
   },
   {
     "key": "ctrl+u",
