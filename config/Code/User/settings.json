@@ -20,7 +20,6 @@
     "suppressResultsExplorerNotice": false,
     "suppressShowKeyBindingsNotice": true
   },
-  "npm.enableScriptExplorer": true,
   "npm.packageManager": "yarn",
   "emmet.showExpandedAbbreviation": "never",
   "emmet.includeLanguages": {
