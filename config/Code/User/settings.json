@@ -93,10 +93,6 @@
   },
   "vim.camelCaseMotion.enable": true,
   "vim.easymotion": true,
-  "vim.easymotionMarkerFontFamily": "Droid Sans Mono",
-  "vim.easymotionMarkerFontSize": "18",
-  "vim.easymotionMarkerBackgroundColor": "red",
-  "vim.easymotionMarkerHeight": 16
   "shellcheck.disableVersionCheck": true,
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
