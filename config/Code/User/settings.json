@@ -8,6 +8,7 @@
     "rubocop": true
   },
   "ruby.intellisense": "rubyLocate",
+  "solargraph.checkGemVersion": false,
   "editor.rulers": [100],
   "gitlens.keymap": "chorded",
   "gitlens.advanced.messages": {
