@@ -258,10 +258,10 @@ let g:rails_projections = {
 let g:jsx_ext_required = 0
 
 " Configure fugitive
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>ga :Gwrite<CR>
-nnoremap <Leader>gc :Gcommit<CR>
-nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gs :Git status<CR>
+nnoremap <Leader>ga :Git write<CR>
+nnoremap <Leader>gc :Git commit<CR>
+nnoremap <Leader>gb :Git blame<CR>
 nnoremap <Leader>gd :Git! diff<CR>
 nnoremap <Leader>gdc :Git! diff --cached<CR>
 
