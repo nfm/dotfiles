@@ -14,7 +14,5 @@ alias cleanup="trunc log/development.log log/test.log; rm -rf tmp/cache tmp/cove
 alias vim="/usr/bin/nvim"
 alias docker-compose="CURRENT_UID=$(id -u) CURRENT_GID=$(id -g) docker-compose"
 alias dc="docker-compose"
-alias copy='xclip -selection clipboard'
-alias paste='xclip -selection clipboard -o'
 alias tailf='tail -f'
 alias k=kubectl

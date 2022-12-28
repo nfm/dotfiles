@@ -51,3 +51,22 @@ function cdup()
   fi
 }
 
+function copy() {
+  if command -v xclip > /dev/null; then
+    xclip -selection clipboard $1
+  elif command -v pbcopy > /dev/null; then
+    cat $1 | pbcopy
+  else
+    abort "Neither xclip nor pbcopy are available, aborting"
+  fi
+}
+
+function paste() {
+  if command -v xclip > /dev/null; then
+    xclip -selection clipboard -o
+  elif command -v pbcopy > /dev/null; then
+    pbpaste
+  else
+    abort "Neither xclip nor pbcopy are available, aborting"
+  fi
+}
