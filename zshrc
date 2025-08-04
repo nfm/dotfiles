@@ -9,8 +9,17 @@ source ~/.zsh/functions.zsh
 
 umask 077
 
-export EDITOR=/usr/bin/nvim
-export BROWSER=/usr/bin/firefox
+# Set env vars based on OS
+case "$OSTYPE" in
+  darwin*)
+    export BROWSER="open -a firefox"
+    export EDITOR="nvim"
+    ;;
+  linux*)
+    export BROWSER="/usr/bin/firefox"
+    export EDITOR="/usr/bin/nvim"
+    ;;
+esac
 
 # Solarized
 eval `dircolors ~/.zsh/dircolors/solarized.ansi-dark`
