@@ -73,7 +73,6 @@ unset LD_PRELOAD
 
 # Set up the prompt
 autoload -U colors && colors
-source ~/.zsh/prompt.zsh
 
 # Keep 100000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=100000
@@ -135,5 +134,10 @@ bindkey '\C-x\C-e' edit-command-line
 
 bindkey -M viins 'jj' vi-cmd-mode
 
+# Enable starship (https://starship.rs/)
+export STARSHIP_CONFIG=~/.config/starship/tokyo-night.toml
+eval "$(starship init zsh)"
+
 # Call zprof to display profiler output
 # zprof
+
