@@ -15,15 +15,17 @@ case "$OSTYPE" in
   darwin*)
     export BROWSER="open -a firefox"
     export EDITOR="nvim"
+
+    # Make ls colors work in MacOS (alternatively, alias ls='ls -G')
+    export CLICOLOR=1
     ;;
   linux*)
     export BROWSER="/usr/bin/firefox"
     export EDITOR="/usr/bin/nvim"
+
+    eval `dircolors ~/.zsh/dircolors/solarized.ansi-dark`
     ;;
 esac
-
-# Solarized
-eval `dircolors ~/.zsh/dircolors/solarized.ansi-dark`
 
 # Enable mise (https://github.com/jdx/mise)
 eval "$(/opt/homebrew/bin/mise activate zsh)"
