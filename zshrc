@@ -87,6 +87,9 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+# Load 1password CLI completions
+eval "$(op completion zsh)"; compdef _op op
+
 # Load up zmv
 autoload zmv
 
