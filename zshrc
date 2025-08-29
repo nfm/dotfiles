@@ -6,6 +6,7 @@
 
 source ~/.zsh/aliases
 source ~/.zsh/functions.zsh
+source ~/.zsh/forgit.zsh
 
 umask 077
 
