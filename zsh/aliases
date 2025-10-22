@@ -26,3 +26,5 @@ alias rgi="rg --ignore-case"
 alias tfi="terraform init"
 alias tfp="aws-vault exec iam@workloads -- terraform plan"
 alias tfa="aws-vault exec iam@workloads -- terraform apply"
+
+alias cd="echo use z"
