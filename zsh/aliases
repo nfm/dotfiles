@@ -12,6 +12,8 @@ alias dc="docker-compose"
 alias tailf='tail -f'
 alias k=kubectl
 
+alias preview="open -a Preview"
+
 alias rc="bundle exec rails console"
 alias rdb="bundle exec rails dbconsole"
 alias rs="bundle install && bundle exec rails server"
