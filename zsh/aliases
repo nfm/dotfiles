@@ -7,7 +7,6 @@ alias be="bundle exec"
 alias trunc="truncate -s 0"
 alias cleanup="trunc log/*.log; rm -rf tmp/cache tmp/coverage tmp/assets"
 alias tmux="TERM=screen-256color-bce tmux"
-alias vim="/usr/bin/nvim"
 alias docker-compose="CURRENT_UID=$(id -u) CURRENT_GID=$(id -g) docker-compose"
 alias dc="docker-compose"
 alias tailf='tail -f'
