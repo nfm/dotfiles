@@ -20,6 +20,9 @@ alias rt="bundle exec rails test"
 alias prd="pnpm install && pnpm run dev"
 alias tsc="pnpm tsc --incremental"
 
+alias rgh="rg --hidden"
+alias rgi="rg --ignore-case"
+
 alias tfi="terraform init"
 alias tfp="aws-vault exec iam@workloads -- terraform plan"
 alias tfa="aws-vault exec iam@workloads -- terraform apply"
