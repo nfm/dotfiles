@@ -119,6 +119,9 @@ bindkey '\C-x\C-e' edit-command-line
 
 bindkey -M viins 'jj' vi-cmd-mode
 
+# Enable zoxide (https://github.com/ajeetdsouza/zoxide)
+eval "$(zoxide init zsh)"
+
 # Enable starship (https://starship.rs/)
 export STARSHIP_CONFIG=~/.config/starship/tokyo-night.toml
 eval "$(starship init zsh)"
