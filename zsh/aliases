@@ -11,3 +11,15 @@ alias dr="docker run -it --rm"
 alias dc="docker-compose"
 alias tailf='tail -f'
 alias k=kubectl
+
+alias rc="bundle exec rails console"
+alias rdb="bundle exec rails dbconsole"
+alias rs="bundle install && bundle exec rails server"
+alias rt="bundle exec rails test"
+
+alias prd="pnpm install && pnpm run dev"
+alias tsc="pnpm tsc --incremental"
+
+alias tfi="terraform init"
+alias tfp="aws-vault exec iam@workloads -- terraform plan"
+alias tfa="aws-vault exec iam@workloads -- terraform apply"
